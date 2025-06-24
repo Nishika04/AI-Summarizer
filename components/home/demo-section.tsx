@@ -42,7 +42,7 @@ export default function DemoSection(){
                 </div>
                 <div className="flex justify-center items-center
                 px-2 sm:px-4 lg:px-6"></div>
-                    <SummaryViewer summary={""} />
+{/*                     <SummaryViewer summary={""} /> */}
                 </div>
 
                 </div>
