@@ -1,7 +1,7 @@
 import BgGradient from "@/components/common/bg-gradient";
-import SourceInfo from "@/components/summaries/source-info";
+import {SourceInfo} from "@/components/summaries/source-info";
 import SummaryHeader from "@/components/summaries/summary-header";
-import SummaryViewer from "@/components/summaries/summary-viewer";
+import {SummaryViewer} from "@/components/summaries/summary-viewer";
 import { getSummaryById } from "@/lib/summaries";
 import { FileText } from "lucide-react";
 import { notFound } from "next/navigation";
@@ -35,7 +35,7 @@ export default async function SummaryPage(props: {
                 <SourceInfo
                 title={title}
                 summaryText={summary_text} 
-                filename={file_name}
+                fileName={file_name}
                 createdAt={created_at}
                 originalFileUrl={original_file_url} 
                 />
