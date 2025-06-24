@@ -3,7 +3,10 @@ import { NextRequest, NextResponse } from "next/server";
 import Stripe from 'stripe';
 import { isGeneratorFunction } from "util/types";
 
-const stripe  = new Stripe(process.env.STRIPE_SECTRET_KEY!);
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+  apiVersion: '2025-05-28.basil' as const,
+});
+
 
 export const POST = async(req: NextRequest) => {
     const payload = await req.text();
@@ -36,7 +39,7 @@ export const POST = async(req: NextRequest) => {
                 const subscriptionId= event.data.object.id;
 
                 await handleSubscriptionDeleted({subscriptionId, stripe});
-                
+
                 console.log(subscription);
                 break;
 
